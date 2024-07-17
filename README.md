@@ -40,13 +40,20 @@ apps
   ├─ auth-proxy
   |   ├─ Nitro server to proxy OAuth requests in preview deployments
   |   └─ Uses Auth.js Core
-  ├─ expo
+  ├─ mobile
   |   ├─ Expo SDK 51
   |   ├─ React Native using React 18
   |   ├─ Navigation using Expo Router
   |   ├─ Tailwind using NativeWind
   |   └─ Typesafe API calls using tRPC
-  └─ next.js
+  ├─ desktop
+  |   ├─ Tauri v2
+  |   ├─ React 18
+  |   ├─ Tanstack Router
+  |   ├─ Tailwind CSS
+  |   ├─ Vite v5
+  |   └─ Typesafe API calls using tRPC
+  └─ web
       ├─ Next.js 14
       ├─ React 18
       ├─ Tailwind CSS
