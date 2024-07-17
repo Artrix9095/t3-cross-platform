@@ -9,7 +9,6 @@ import { getAPIUrl } from "~/util/api";
 type DeepLinkLoginPayload = {
   event: "login";
   url: string;
-  session_token: string;
 };
 
 export const signIn = () =>

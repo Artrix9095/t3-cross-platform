@@ -41,7 +41,7 @@
     "@acme/tsconfig": "workspace:*",
     "@tanstack/router-cli": "^1.43.1",
     "@tanstack/router-plugin": "^1.43.5",
-    "@tauri-apps/cli": "next",
+    "@tauri-apps/cli": "2.0.0-beta.22",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
