@@ -13,7 +13,7 @@ import { register } from "@tauri-apps/plugin-deep-link";
 // Create a new router instance
 const router = createRouter({ routeTree });
 
-await register("acme"); 
+register("acme"); 
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
