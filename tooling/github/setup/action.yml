@@ -1,7 +1,7 @@
 name: "Setup and install"
 description: "Common setup steps for Actions"
 
-runs:
+runs: 
   using: composite
   steps:
     - uses: pnpm/action-setup@v4

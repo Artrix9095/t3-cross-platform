@@ -7,6 +7,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
+      "env": ["API_URL"],
       "outputs": [
         ".next/**",
         "!.next/cache/**",
@@ -19,6 +20,9 @@
     "dev": {
       "persistent": true,
       "cache": false
+    },
+    "desktop#dev": {
+      "dependsOn": ["^web#dev"]
     },
     "format": {
       "outputs": ["node_modules/.cache/.prettiercache"],
@@ -57,6 +61,7 @@
     "AUTH_DISCORD_SECRET",
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
+    "API_URL",
     "PORT"
   ],
   "globalPassThroughEnv": [

@@ -8,7 +8,8 @@
     "./*": [
       "./src/*.tsx",
       "./src/*.ts"
-    ]
+    ],
+    "./styles": "./styles"
   },
   "license": "MIT",
   "scripts": {
