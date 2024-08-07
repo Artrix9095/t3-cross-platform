@@ -21,6 +21,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["*.ts", "src"],
+  "include": ["*.ts", "src", "src/routes/index.tsx"],
   "exclude": ["node_modules"]
 }

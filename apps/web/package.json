@@ -20,7 +20,7 @@
     "@acme/ui": "workspace:*",
     "@acme/validators": "workspace:*",
     "@t3-oss/env-nextjs": "^0.10.1",
-    "@tanstack/react-query": "^5.50.1",
+    "@tanstack/react-query": "^5.51.21",
     "@trpc/client": "11.0.0-rc.449",
     "@trpc/react-query": "11.0.0-rc.449",
     "@trpc/server": "11.0.0-rc.449",
@@ -39,11 +39,11 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "dotenv-cli": "^7.4.2",
-    "eslint": "^9.4.0",
+    "eslint": "^9.8.0",
     "jiti": "^1.21.0",
-    "prettier": "^3.3.1",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   },
   "prettier": "@acme/prettier-config"
 }

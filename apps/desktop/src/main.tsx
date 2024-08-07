@@ -1,4 +1,4 @@
-import React, { StrictMode, Suspense } from "react";
+import React, { StrictMode } from "react";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import ReactDOM from "react-dom/client";
 
@@ -7,13 +7,11 @@ import { routeTree } from "~/routeTree.gen";
 import { TRPCProvider } from "~/trpc";
 
 import "../node_modules/@acme/ui/styles/globals.css"; // Hack for now
+
 import { ThemeProvider } from "@acme/ui/theme";
-import { register } from "@tauri-apps/plugin-deep-link";
 
 // Create a new router instance
 const router = createRouter({ routeTree });
-
-register("acme"); 
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
@@ -23,7 +21,9 @@ declare module "@tanstack/react-router" {
 }
 
 // Render the app
-const rootElement = document.getElementById("root")!;
+const rootElement = document.getElementById("root");
+
+if (!rootElement) throw new Error("Root not in body");
 
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);

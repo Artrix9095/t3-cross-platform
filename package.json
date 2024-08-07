@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "@acme/prettier-config": "workspace:*",
-    "@turbo/gen": "^2.0.3",
-    "prettier": "^3.3.1",
-    "turbo": "^2.0.3",
-    "typescript": "^5.4.5"
+    "@turbo/gen": "^2.0.12",
+    "prettier": "^3.3.3",
+    "turbo": "^2.0.12",
+    "typescript": "^5.5.4"
   },
   "prettier": "@acme/prettier-config"
 }

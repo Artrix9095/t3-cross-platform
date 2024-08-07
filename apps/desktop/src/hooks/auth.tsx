@@ -1,31 +1,29 @@
 import { useRouter } from "@tanstack/react-router";
 import { listen } from "@tauri-apps/api/event";
+import {
+  isRegistered,
+  onOpenUrl,
+  register,
+} from "@tauri-apps/plugin-deep-link";
 import { open } from "@tauri-apps/plugin-shell";
 
 import { deleteToken, setToken } from "~/stores/auth";
 import { api } from "~/trpc";
 import { getAPIUrl } from "~/util/api";
 
-type DeepLinkLoginPayload = {
-  event: "login";
-  url: string;
-};
-
 export const signIn = () =>
-  new Promise(async (res) => {
+  new Promise<string>((res) => {
     const signInUrl = `${getAPIUrl()}/api/auth/signin?redirect=acme://login`;
 
-    await open(signInUrl);
-
-    listen<DeepLinkLoginPayload>("deep-link", (e) => {
-      console.log(e.payload);
-      if (e.payload.event.includes("login")) {
-        const url = new URL(e.payload.url);
-        const sessionToken = url.searchParams.get("session_token");
-        if (!sessionToken) return;
-        setToken(sessionToken);
-        res(sessionToken);
-      }
+    void open(signInUrl);
+    // onOpenUrlj(console.log).finally(console.log);
+    void listen<string>("session-token", (e) => {
+      console.log(e);
+      const url = new URL(e.payload);
+      const sessionToken = url.searchParams.get("session_token");
+      if (!sessionToken) return;
+      void setToken(sessionToken);
+      res(sessionToken);
     });
   });
 
@@ -39,9 +37,14 @@ export const useSignIn = () => {
   const router = useRouter();
 
   return async () => {
-    console.log(await signIn());
+    if (!(await isRegistered("acme"))) {
+      await register("acme");
+      console.log('Registered "acme"');
+    }
+
+    await signIn();
     await utils.invalidate();
-    router.navigate({ to: "/" });
+    return router.navigate({ to: "/" });
   };
 };
 
@@ -55,6 +58,6 @@ export const useSignOut = () => {
     if (!res.success) return;
     await deleteToken();
     await utils.invalidate();
-    router.navigate({ to: "/" });
+    return router.navigate({ to: "/" });
   };
 };

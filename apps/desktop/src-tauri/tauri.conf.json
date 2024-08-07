@@ -22,6 +22,17 @@
       "csp": null
     }
   },
+  "plugins": {
+    "deep-link": {
+      "mobile": [
+        { "host": "acme.t3.com", "pathPrefix": ["/login"] },
+        { "host": "acme.com" }
+      ],
+      "desktop": {
+        "schemes": ["acme"]
+      }
+    }
+  },
   "bundle": {
     "active": true,
     "targets": "all",

@@ -17,6 +17,7 @@ export function AuthShowcase() {
           size="lg"
           onClick={async (e) => {
             e.preventDefault();
+            console.log("Signing in");
             await signIn();
           }}
         >
