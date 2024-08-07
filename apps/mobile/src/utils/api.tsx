@@ -9,7 +9,6 @@ import type { AppRouter } from "@acme/api";
 import { getBaseUrl } from "./base-url";
 import { getToken } from "./session-store";
 
-
 /**
  * A set of typesafe hooks for consuming your API.
  */

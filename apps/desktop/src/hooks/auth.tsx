@@ -1,10 +1,6 @@
 import { useRouter } from "@tanstack/react-router";
 import { listen } from "@tauri-apps/api/event";
-import {
-  isRegistered,
-  onOpenUrl,
-  register,
-} from "@tauri-apps/plugin-deep-link";
+import { isRegistered, register } from "@tauri-apps/plugin-deep-link";
 import { open } from "@tauri-apps/plugin-shell";
 
 import { deleteToken, setToken } from "~/stores/auth";
