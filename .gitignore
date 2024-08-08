@@ -55,4 +55,6 @@ dist/
 # will have compiled files and executables
 **/target
 **/gen/schemas
+# Auto generated 
+apps/desktop/src/routeTree.gen.ts
 
